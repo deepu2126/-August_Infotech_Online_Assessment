@@ -1,0 +1,40 @@
+
+Question : 8
+// employees - EMPLOYEE_ID / FIRST_NAME / LAST_NAME / EMAIL / PHONE_NUMBER / HIRE_DATE / JOB_ID / SALARY / COMMISSION_PCT / MANAGER_ID / DEPARTMENT_ID
+
+// departments - DEPARTMENT_ID / DEPARTMENT_NAME / MANAGER_ID / LOCATION_ID
+
+// locations - location_id / street_address / postal_code / city / state_province / country_id
+
+
+SELECT FIRST_NAME, LAST_NAME FROM employees
+JOIN (SELECT * FROM departments
+JOIN locations ON departments.LOCATION_ID = locations.location_id)
+ON employees.DEPARTMENT_ID = departments.DEPARTMENT_ID
+WHERE state_province = 'USA';
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Question 9:
+
+Consider above schemas and Write a query to find the name (first_name, last_name),
+and salary of the employees who earns more than the average salary and works in any of the IT departments. [2.5 marks]
+
+SELECT FIRST_NAME, LAST_NAME FROM employees
+JOIN departments ON employees.DEPARTMENT_ID = departments.DEPARTMENT_ID
+WHERE DEPARTMENT_NAME == 'IT' AND 
+AVG(SALARY) > SALARY;
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+QUESTION 11
+
+Salesman - salesman_id / name / city / commission
+
+Customer - customer_id / cust_name / city  / grade / salesman_id
+
+SELECT * FROM Salesman
+JOIN Customer ON Salesman.salesman_id = Customer.salesman_id
+WHERE Salesman.city = 'London'
+AND Customer.city = 'London';

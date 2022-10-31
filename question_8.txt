@@ -1,0 +1,5 @@
+SELECT FIRST_NAME, LAST_NAME FROM employees
+JOIN (SELECT * FROM departments
+JOIN locations ON departments.LOCATION_ID = locations.location_id)
+ON employees.DEPARTMENT_ID = departments.DEPARTMENT_ID
+WHERE state_province = 'USA';

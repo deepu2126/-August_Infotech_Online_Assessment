@@ -1,0 +1,15 @@
+CUSTOMER  - 
+    customer_id - primary_key INT
+    customer_name - VARCHAR
+    customer_email - VARCHAR
+    customer_location - VARCHAR
+
+PRODUCTS - 
+    product_id - primary_key  INT
+    product_name - VARCHAR
+    product_price = INT
+
+ProductOrder - 
+    order_id = primary_key INT
+    customer_id = forgine_key INT
+    product_id = forgine_key INT

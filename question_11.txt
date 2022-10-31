@@ -1,0 +1,4 @@
+SELECT * FROM Salesman
+JOIN Customer ON Salesman.salesman_id = Customer.salesman_id
+WHERE Salesman.city = 'London'
+AND Customer.city = 'London';
